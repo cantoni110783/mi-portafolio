@@ -464,6 +464,7 @@
 .contact-valor {
   color: #e2e8f0;
   font-weight: 500;
+  word-break: break-all; /* Evita que emails o URLs largos rompan el diseño */
 }
 
 /* ── FOOTER ──────────────────────────────────────────────── */
