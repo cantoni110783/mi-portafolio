@@ -40,7 +40,7 @@ export const info = {
       descripcion:
         "Aplicación de gestión de tareas con React. Permite agregar, completar y eliminar tareas con persistencia en localStorage.",
       tecnologias: ["React", "JavaScript", "CSS"],
-      link: null,
+      link: "https://mi-lista-tareas-nine.vercel.app/",
       github: null,
     },
   ],
