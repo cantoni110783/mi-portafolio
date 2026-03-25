@@ -32,7 +32,7 @@ export const info = {
         "Sitio web completo para restaurante con menú, información y reservas.",
       tecnologias: ["HTML", "CSS", "JavaScript"],
       link: "https://restaurantelatertulia.org/",
-      github: null,
+      github: "https://github.com/cantoni110783/restaurante-la-tertulia",
     },
     {
       id: 2,
@@ -41,7 +41,7 @@ export const info = {
         "Aplicación de gestión de tareas con React. Permite agregar, completar y eliminar tareas con persistencia en localStorage.",
       tecnologias: ["React", "JavaScript", "CSS"],
       link: "https://mi-lista-tareas-nine.vercel.app/",
-      github: null,
+      github: "https://github.com/cantoni110783/mi-lista-tareas",
     },
   ],
 };
