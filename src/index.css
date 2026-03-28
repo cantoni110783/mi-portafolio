@@ -1,3 +1,31 @@
+/* ── VARIABLES DE TEMA ───────────────────────────────────── */
+/* Valores por defecto — modo oscuro */
+:root {
+  --fondo: #0f172a;
+  --fondo-card: #1e293b;
+  --fondo-input: #1e293b;
+  --borde: #334155;
+  --texto: #e2e8f0;
+  --texto-sub: #94a3b8;
+  --texto-tenue: #64748b;
+  --acento: #38bdf8;
+  --navbar-bg: rgba(15, 23, 42, 0.95);
+}
+
+/* Modo claro — sobreescribe las variables cuando data-tema="claro" */
+[data-tema="claro"] {
+  --fondo: #f8fafc;
+  --fondo-card: #ffffff;
+  --fondo-input: #f1f5f9;
+  --borde: #e2e8f0;
+  --texto: #0f172a;
+  --texto-sub: #475569;
+  --texto-tenue: #94a3b8;
+  --acento: #0284c7;
+  --navbar-bg: rgba(248, 250, 252, 0.95);
+}
+
+/* ── RESET Y BASE ────────────────────────────────────────── */
 * {
   margin: 0;
   padding: 0;
@@ -5,24 +33,26 @@
 }
 
 html {
-  /* Hace que el scroll al hacer clic en links sea suave */
   scroll-behavior: smooth;
 }
 
 body {
   font-family: "Segoe UI", system-ui, sans-serif;
-  background-color: #0f172a;
-  color: #e2e8f0;
+  /* Ahora usamos variables en vez de colores fijos */
+  background-color: var(--fondo);
+  color: var(--texto);
   min-height: 100vh;
+  /* Transición suave al cambiar de tema */
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
-/* Estilo base para todos los links */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Patrón de título de sección */
 .seccion-titulo {
   text-align: center;
   margin-bottom: 3rem;
@@ -31,46 +61,44 @@ a {
 .seccion-titulo h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: #e2e8f0;
+  color: var(--texto);
   margin-bottom: 0.75rem;
 }
 
-/* Línea decorativa debajo del título */
 .seccion-linea {
   display: block;
   width: 60px;
   height: 4px;
-  background-color: #38bdf8;
+  background-color: var(--acento);
   margin: 0 auto;
   border-radius: 2px;
 }
 
-/* Botones reutilizables en todo el portafolio */
 .btn-primario {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: #38bdf8;
+  background-color: var(--acento);
   color: #0f172a;
   border-radius: 8px;
   font-weight: 600;
-  transition: background 0.2s;
+  transition: opacity 0.2s;
 }
 
 .btn-primario:hover {
-  background-color: #7dd3fc;
+  opacity: 0.85;
 }
 
 .btn-secundario {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  border: 2px solid #38bdf8;
-  color: #38bdf8;
+  border: 2px solid var(--acento);
+  color: var(--acento);
   border-radius: 8px;
   font-weight: 600;
   transition: all 0.2s;
 }
 
 .btn-secundario:hover {
-  background-color: #38bdf8;
+  background-color: var(--acento);
   color: #0f172a;
 }

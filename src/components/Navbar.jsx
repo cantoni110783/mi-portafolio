@@ -9,16 +9,31 @@ const links = [
 ];
 
 function Navbar() {
-  // Estado para controlar el menú hamburguesa en móvil
   const [menuAbierto, setMenuAbierto] = useState(false);
+
+  // Estado del tema — arranca en oscuro
+  const [temaClaro, setTemaClaro] = useState(false);
+
+  const cambiarTema = () => {
+    const nuevoTema = !temaClaro;
+
+    // Actualizamos el estado
+    setTemaClaro(nuevoTema);
+
+    // Agregamos o quitamos el atributo en el elemento raíz del HTML
+    // Esto activa las variables CSS del modo claro automáticamente
+    document.documentElement.setAttribute(
+      "data-tema",
+      nuevoTema ? "claro" : "oscuro",
+    );
+  };
 
   return (
     <nav className="navbar">
       <a href="#inicio" className="navbar-logo">
-        JC <span>Cantoñi</span>
+        JC<span>Cantoñi</span>
       </a>
 
-      {/* Links en desktop */}
       <ul className="navbar-links">
         {links.map((link) => (
           <li key={link.href}>
@@ -27,21 +42,25 @@ function Navbar() {
         ))}
       </ul>
 
-      {/* Botón de menú hamburguesa en móvil */}
-      <button
-        className="navbar-hamburger"
-        onClick={() => setMenuAbierto(!menuAbierto)}
-      >
-        {/* Cambia el ícono segun el estado */}
-        {menuAbierto ? "x" : "☰"}
-      </button>
+      <div className="navbar-acciones">
+        {/* Botón de tema — muestra sol o luna según el estado */}
+        <button className="tema-btn" onClick={cambiarTema}>
+          {temaClaro ? "🌙" : "☀️"}
+        </button>
 
-      {/* Menú movil */}
+        {/* Botón hamburguesa para móvil */}
+        <button
+          className="navbar-hamburger"
+          onClick={() => setMenuAbierto(!menuAbierto)}
+        >
+          {menuAbierto ? "✕" : "☰"}
+        </button>
+      </div>
+
       {menuAbierto && (
         <ul className="navbar-menu-movil">
           {links.map((link) => (
             <li key={link.href}>
-              {/* Cierra el menú al hacer clic en un link */}
               <a href={link.href} onClick={() => setMenuAbierto(false)}>
                 {link.label}
               </a>
