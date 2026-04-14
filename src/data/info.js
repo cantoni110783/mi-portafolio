@@ -4,7 +4,6 @@ export const info = {
   // ── DATOS PERSONALES ──────────────────────────────────────
   nombre: "Juan Camilo Cantoñi Ambuila",
   titulo: "Desarrollador Frontend",
-  subtitulo: "Desarrollador de Software en Formación",
   descripcion:
     "Apasionado por crear interfaces web modernas y funcionales. Estudiante de Análisis y Desarrollo de Software en el SENA, construyendo mi camino en el mundo del desarrollo.",
 

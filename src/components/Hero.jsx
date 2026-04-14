@@ -15,7 +15,7 @@ function Hero() {
             <p className="hero-saludo">👋 Hola, soy</p>
             <h1 className="hero-nombre">{info.nombre}</h1>
             <h2 className="hero-titulo">
-              {info.titulo} <span>& {info.subtitulo}</span>
+              <span>{info.titulo}</span>
             </h2>
             <p className="hero-descripcion">{info.descripcion}</p>
             <div className="hero-botones">

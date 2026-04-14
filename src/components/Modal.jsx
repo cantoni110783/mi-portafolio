@@ -53,7 +53,6 @@ function Modal({ abierto, onCerrar }) {
         <div className="modal-info">
           <h2 className="modal-nombre">{info.nombre}</h2>
           <p className="modal-titulo">{info.titulo}</p>
-          <p className="modal-subtitulo">{info.subtitulo}</p>
 
           <p className="modal-descripcion">
             Colombiano, apasionado por el desarrollo web y la tecnología.
